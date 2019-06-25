@@ -13,20 +13,17 @@
     <div id='location-search'>
       <input type='text' id='city-search' data-city-search placeholder='City, State' required>
     </div>
-    <div id='current-location'>Enter A City<span>To Find The Weather</span></div>
+    <div id='current-location'><span id='city'></span><span id='warning'></span></div>
     <div id='weather'>
       <ul>
-        <li class='weather-info' id='wind'>
-          <div>Wind</div>
-          <div id='wind-value'>-</div>
-        </li>
+        <div id='description'></div>
         <li class='weather-info' id= 'temperature'>
-          <div>Temperature</div>
-          <div id='temperature-value'>-</div>
+          <div id='main-temp'></div>
+          <div id='main-temp-value'></div>
         </li>
         <li class='weather-info' id='precipitation'>
-            <div id='prep-value'>Precipitation</div>
-            <div>-</div>
+            <div id='prep-value'></div>
+            <div></div>
         </li>
       </ul>
     </div>

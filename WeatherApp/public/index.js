@@ -16,4 +16,26 @@ searchElement.addEventListener('change', (event) => {
 
 let setWeather = (data) => {
   console.log(data)
+  console.log(convertKelvinToFahrenheit(data.main.temp))
+  console.log(convertKelvinToCelsius(data.main.temp))
+}
+
+let convertKelvinToFahrenheit = (kelvinValue) => {
+  return ((kelvinValue-273.15) * (9/5) + 32)
+}
+
+let convertKelvinToCelsius = (kelvinValue) => {
+  return(kelvinValue -273.15)
+}
+
+let setLocation = () => {
+
+}
+
+let setWeatherDescription = () => {
+  
+}
+
+let setTemperature = () => {
+
 }
