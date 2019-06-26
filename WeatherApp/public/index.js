@@ -11,11 +11,14 @@ searchElement.addEventListener('change', (event) => {
     })
   }).then(res => res.json()).then(data => {
     setWeather(data)
+  }).catch(error => {
+    console.log('Error')
   })
 })
 
 let setWeather = (data) => {
   console.log(data)
+  setLocation(data.name, data.sys.country)
   console.log(convertKelvinToFahrenheit(data.main.temp))
   console.log(convertKelvinToCelsius(data.main.temp))
 }
@@ -28,12 +31,13 @@ let convertKelvinToCelsius = (kelvinValue) => {
   return(kelvinValue -273.15)
 }
 
-let setLocation = () => {
-
+let setLocation = (city, country) => {
+  const location = document.querySelector('#city')
+  location.textContent = city + ', ' + country; 
 }
 
 let setWeatherDescription = () => {
-  
+
 }
 
 let setTemperature = () => {
