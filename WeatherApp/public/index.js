@@ -12,13 +12,18 @@ searchElement.addEventListener('change', (event) => {
   }).then(res => res.json()).then(data => {
     setWeather(data)
   }).catch(error => {
-    console.log('Error')
+    resetSearch()
   })
 })
 
 let setWeather = (data) => {
   console.log(data)
-  setLocation(data.name, data.sys.country)
+  if (data.name) {
+    setLocation(data.name, data.sys.country)
+  } else {
+    resetSearch()
+  }
+  
   console.log(convertKelvinToFahrenheit(data.main.temp))
   console.log(convertKelvinToCelsius(data.main.temp))
 }
@@ -33,7 +38,18 @@ let convertKelvinToCelsius = (kelvinValue) => {
 
 let setLocation = (city, country) => {
   const location = document.querySelector('#city')
-  location.textContent = city + ', ' + country; 
+  location.textContent = city + ', ' + country
+  document.getElementById('warning-msg').textContent = ""
+  document.getElementById('warning').textContent = ""
+  document.getElementById('city-search').value = ""
+}
+
+let resetSearch = () => {
+  const msg = document.querySelector('#warning-msg')
+  msg.textContent = "** Location do not exist or wrong format **"
+  document.querySelector('#city-search').value = ""
+  document.querySelector('#city').textContent = "Enter A Location"
+  document.querySelector('#warning').textContent = "To Find The Weather"
 }
 
 let setWeatherDescription = () => {

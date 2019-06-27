@@ -10,7 +10,7 @@ body {
 }
 
 #app {
-  width: 400px;
+  width: 600px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -44,6 +44,12 @@ input[type="text"]::placeholder{
 #location-search {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#warning-msg {
+  font-weight: 800;
+  margin-left: 0px;
+  font-size: 0.7em;
 }
 #city-search {
   width: 90%;

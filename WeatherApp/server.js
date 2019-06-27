@@ -20,7 +20,6 @@ app.post('/weather', (req, res) => {
     url: url,
     responseType: 'json'
   }).then(data => res.json(data.data)).catch((error) => {
-    console.log('Invalid City')
     return res.json({})
   })
 })
