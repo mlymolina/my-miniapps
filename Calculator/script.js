@@ -8,8 +8,9 @@ function printHistory(){
 function getOutput(){
   return document.querySelector('#output-value').innerText
 }
+
 function printOutput(num) {
-  if(num=="") {
+  if(num ==  "") {
     document.querySelector('#output-value').innerText = num
   } else {
     document.querySelector('#output-value').innerText = getFormattedNumber(num)
@@ -24,17 +25,17 @@ function removeNumberFormat(num) {
   return Number(num.replace(/,/g, ''))
 }
 
-var operator = document.querySelector('.operator')
-for (let i = 0; i < operator.length; i+= 1) {
+var operator = document.querySelectorAll('.operator')
+for (let i = 0; i < operator.length; i++) {
   operator[i].addEventListener('click', function(){
 
   })
 }
 
-var number = document.querySelector('.number')
-for (let i = 0; i < number.length; i+= 1) {
+var number = document.querySelectorAll('.number')
+for (let i = 0; i < number.length; i++) {
   number[i].addEventListener('click', function(){
-    const output = removeNumberFormat(getOutput())
+    let output = removeNumberFormat(getOutput())
     if (output != NaN) {
       output += this.id
       printOutput(output)
